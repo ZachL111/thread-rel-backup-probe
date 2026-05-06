@@ -1,0 +1,17 @@
+{
+  "repo": "thread-rel-backup-probe",
+  "thresholds": {
+    "signal": 3,
+    "slack": 1,
+    "confidence": 2,
+    "drag": 4,
+    "ship": 162,
+    "watch": 129
+  },
+  "terms": [
+    "budget pressure",
+    "failure width",
+    "recovery gap",
+    "runbook drift"
+  ]
+}

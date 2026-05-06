@@ -61,3 +61,9 @@ foreach ($pathPattern in $knownPaths) {
 forge test
 
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-thread-rel-backup-detail.ps1
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-thread-rel-backup-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-thread-rel-backup-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
