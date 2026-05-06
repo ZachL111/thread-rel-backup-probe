@@ -1,0 +1,73 @@
+{
+  "repo": "thread-rel-backup-probe",
+  "language": "Solidity",
+  "category": "Reliability",
+  "goal": "Develop a Solidity command-oriented project for backup scenarios with deny and allow fixtures, explainable decision traces, and fixture-scale datasets.",
+  "review_model": {
+    "terms": [
+      "budget pressure",
+      "failure width",
+      "recovery gap",
+      "runbook drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "budget pressure",
+      "signal": 51,
+      "slack": 22,
+      "drag": 13,
+      "confidence": 88,
+      "score": 173,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "failure width",
+      "signal": 70,
+      "slack": 26,
+      "drag": 19,
+      "confidence": 93,
+      "score": 202,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "recovery gap",
+      "signal": 64,
+      "slack": 24,
+      "drag": 32,
+      "confidence": 94,
+      "score": 150,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "runbook drift",
+      "signal": 66,
+      "slack": 33,
+      "drag": 31,
+      "confidence": 82,
+      "score": 154,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "budget pressure",
+      "signal": 69,
+      "slack": 44,
+      "drag": 20,
+      "confidence": 91,
+      "score": 213,
+      "lane": "ship"
+    }
+  ]
+}
